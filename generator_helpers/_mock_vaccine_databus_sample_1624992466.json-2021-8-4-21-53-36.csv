@@ -1,0 +1,28 @@
+mrnNumber,beginningDateOfService,memberID,no_insurance,procedure,insurance_name,insurance_plan_phone,locationAddress,locationCity,locationZipCode
+66693-77193,2021-06-22T06:15:07,Gc89449mi,False,"{'procedure_type': 'vaccination', 'vaccine_type': 'Pfizer', 'dose': '1'}",Freedom Health,8004012740.0,6747 Crandon Boulevard,Key Biscayne,04149
+80668-87093,2021-06-17T08:38:53,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Pfizer', 'dose': '1'}",,,18070 Collins Ave,Sunny Isles Beach,04160
+64413-70444,2021-06-19T10:59:34,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Pfizer', 'dose': '1'}",,,10710 SW 211 Street,Cutler Bay,04189
+48210-48673,2021-06-25T10:17:91,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Pfizer', 'dose': '1'}",,,18070 Collins Ave,Sunny Isles Beach,04160
+53250-20826,2021-06-20T21:38:47,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Pfizer', 'dose': '1'}",,,1185 95th St.,Bay Harbor Islands,04154
+39300-59885,2021-06-24T06:00:01,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Pfizer', 'dose': '1'}",,,11401 NorthWest 12th Street,Stryi ,04172
+34587-40861,2021-06-20T09:00:53,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Pfizer', 'dose': '1'}",,,2902 NW 2nd Ave,Stryi,04127
+52317-60414,2021-06-21T11:51:06,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Pfizer', 'dose': '1'}",,,200 Terminal Dr.,Fort Lauderdale,84515
+93487-42371,2021-06-17T19:13:17,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Pfizer', 'dose': '1'}",,,111 NW 1st Street,Stryi,04128
+04953-40285,2021-06-25T04:30:36,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Pfizer', 'dose': '1'}",,,1185 95th St.,Bay Harbor Islands,04154
+61541-84558,2021-06-24T00:01:49,Cv21042oo,False,"{'procedure_type': 'vaccination', 'vaccine_type': 'Pfizer', 'dose': '1'}",Medica Healthcare,8667259917,111 NW 1st Street,Stryi,04128
+51131-39162,2021-07-06T03:15:29,wE57673hd,False,"{'procedure_type': 'vaccination', 'vaccine_type': 'string', 'dose': '2'}",North Dakota Blue Cross Blue Shield,8005448467,10710 SW 211 Street,Cutler Bay,04189
+52491-93022,2021-07-28T19:37:37,Co76835LK,False,"{'procedure_type': 'vaccination', 'vaccine_type': 'Moderna', 'dose': '1'}",TRICRE,8004445445.0,9501 Arlington Expressway,Jacksonville,04125
+37084-92376,2021-07-23T14:51:19,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Moderna', 'dose': '1'}",,,18255 Homestead Ave,Stryi,04157
+99102-14988,2021-07-22T02:32:48,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Moderna', 'dose': '1'}",,,6800 SW 87th Ave,Stryi,04173
+59889-38225,2021-07-29T00:54:22,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Moderna', 'dose': '1'}",,,18255 Homestead Ave,Stryi,04157
+44921-35578,2021-07-29T22:53:12,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Moderna', 'dose': '1'}",,,6699 Windmill Gate Rd.,Stryi,91014
+00830-36446,2021-07-31T01:07:37,Td10057qO,False,"{'procedure_type': 'vaccination', 'vaccine_type': 'Moderna', 'dose': '2'}",CIGNA,8009971654.0,2300 NW 135th Street,Stryi,04167
+63771-81127,2021-07-24T00:03:45,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Moderna', 'dose': '2'}",,,280 Aragon Ave,Coral Gables,04134
+93903-29199,2021-07-26T10:10:21,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Moderna', 'dose': '2'}",,,13489 NE 8th Ave,North Stryi,04161
+13101-97700,2021-08-02T11:23:02,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Moderna', 'dose': '2'}",,,701 Convention Center Drive,Stryi Beach,04189
+29758-89571,2021-07-23T01:02:25,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Moderna', 'dose': '2'}",,,280 Aragon Ave,Coral Gables,04134
+86613-51057,2021-07-27T00:44:48,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Moderna', 'dose': '2'}",,,200 Terminal Dr.,Fort Lauderdale,84515
+00688-97312,2021-07-27T22:25:15,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Moderna', 'dose': '2'}",,,1265 N. Cruise Blvd. ,Stryi,04132
+30144-55307,2021-07-27T19:36:04,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Moderna', 'dose': '2'}",,,111 NW 1st Street,Stryi,04128
+70274-92722,2021-07-22T19:39:50,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Moderna', 'dose': '2'}",,,5400 Old Bradenton Rd,Sarasota,34234
+74713-60014,2021-07-27T16:37:51,,True,"{'procedure_type': 'vaccination', 'vaccine_type': 'Moderna', 'dose': '2'}",,,111 NW 1st Street,Stryi,04128

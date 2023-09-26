@@ -1,0 +1,6 @@
+HL*2*1*22*0~
+SBR*P*18*$group_id******CI~
+NM1*IL*1*$last_name*$first_name****MI*$member_number~
+N3*$street_address~
+N4*$city*$state*$zip_code~
+DMG*D8*$birthdate*$gender~

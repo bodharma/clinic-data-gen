@@ -1,0 +1,1 @@
+ISA*00*          *00*          *01*$sender         *01*$receiver          *$date*$time*^*00501*$control_number*0*P*:~

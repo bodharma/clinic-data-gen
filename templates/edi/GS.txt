@@ -1,0 +1,1 @@
+GS*HC*$sender*$receiver*$date*$time*$control_group*X*005010X222A2~
