@@ -1,7 +1,7 @@
 import random
 from datetime import datetime
 import pandas as pd
-from mimesis import Person, Business, Address as addre
+from mimesis import Person, Finance, Address as addre
 from generator_helpers import date_generator, string_generator
 from pathlib import Path
 import time
@@ -170,7 +170,7 @@ class Organization:
             ),  # // C? Identifies this organization  across multiple systems
             # "active": random.choice([True, False]),  # // Whether the organization's record is still in active use
             # "type": [CodeableConcept()],  # // Kind of organization
-            "name": Business("en").company(),  # // C? Name used for the organization
+            "name": Finance("en").company(),  # // C? Name used for the organization
             # "alias": [""],
             # // A list of alternate names that the organization is known as, or was known as in the past
             # "telecom": [{ContactPoint()}],  # // C? A contact detail for the organization
@@ -680,7 +680,7 @@ class DiagnositcReport:
     def __init__(self, entries_number):
         self.entries_number = int(entries_number) - 1
         self.fake_person = Person("en")
-        self.fake_businees = Business("en")
+        self.fake_businees = Finance("en")
         self.address = addre("en")
 
     def hl7_schema(self):

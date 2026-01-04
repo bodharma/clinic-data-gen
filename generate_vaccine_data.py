@@ -1,6 +1,6 @@
 import random
 from generator_helpers import date_generator, string_generator
-from mimesis import Person, Business, Address
+from mimesis import Person, Finance, Address
 import pandas as pd
 import time
 from datetime import datetime
@@ -44,7 +44,7 @@ class Encounters(Generator):
         self.dose_number = dose_number
         self.entries_number = int(entries_number)
         self.address = Address("en")
-        self.business = Business("en")
+        self.business = Finance("en")
         self.person = Person("en")
 
     def generate_entries(self):

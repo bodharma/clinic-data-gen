@@ -1,5 +1,5 @@
 import pytest
-from LOaky import LOaky
+from flaky import flaky
 from generate_protobuf_data import (
     ContactGenerator,
     SponsorGenerator,
@@ -13,7 +13,7 @@ from generate_protobuf_data import (
 )
 
 
-@LOaky(max_runs=2)
+@flaky(max_runs=2)
 @pytest.mark.parametrize(
     "generator",
     [

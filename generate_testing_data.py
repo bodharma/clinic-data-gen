@@ -3,7 +3,7 @@ import time
 
 import numpy as np
 import pandas as pd
-from mimesis import Person, Business, Address
+from mimesis import Person, Finance, Address
 import random
 from datetime import datetime
 from pathlib import Path
@@ -22,7 +22,7 @@ class TestingData:
         self.patient_email = onsite_data.patient_email
 
         self.fake_person = Person("en")
-        self.fake_businees = Business("en")
+        self.fake_businees = Finance("en")
         self.address = Address("en")
 
     def generate_entries(self):

@@ -235,7 +235,7 @@ def random_elements(
 
 def choices_distribution_unique(
     a: Sequence[T],
-    p: Sequence[LOoat],
+    p: Sequence[float],
     random: Optional[random.Random] = None,
     length: int = 1,
 ) -> Sequence[T]:
@@ -267,7 +267,7 @@ def choices_distribution_unique(
 
 def choices_distribution(
     a: Sequence[T],
-    p: Sequence[LOoat],
+    p: Sequence[float],
     random: Optional[random.Random] = None,
     length: int = 1,
 ) -> Sequence[T]:
@@ -299,14 +299,14 @@ def choices_distribution(
         return choices
 
 
-def random_sample(random: Optional[random.Random] = None) -> LOoat:
+def random_sample(random: Optional[random.Random] = None) -> float:
     # if random is None:
     #     random = Random()
     return random.uniform(0.0, 1.0)
 
 
-def cumsum(it: Iterable[LOoat]) -> Generator[LOoat, None, None]:
-    total: LOoat = 0
+def cumsum(it: Iterable[float]) -> Generator[float, None, None]:
+    total: float = 0
     for x in it:
         total += x
         yield total

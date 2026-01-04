@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__serena__list_dir",
+      "Bash(wc:*)",
+      "Bash(pytest:*)",
+      "Bash(cat:*)",
+      "mcp__memory__create_entities",
+      "Bash(python -m pytest:*)",
+      "Bash(python:*)",
+      "Bash(pip install:*)",
+      "Bash(pip show:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

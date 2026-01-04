@@ -2,7 +2,7 @@ import random
 import uuid
 import csv
 from multiprocessing import Pool
-from mimesis import Person, Business, Address
+from mimesis import Person, Finance, Address
 from generator_helpers import date_generator
 import datetime
 from pathlib import Path
@@ -37,7 +37,7 @@ class MemberRoster:
 
     def member_schema(self, _):
         fake_person = Person("en")
-        fake_businees = Business("en")
+        fake_businees = Finance("en")
         """
         Values that are commented are not yet needed for use.
         :return: data for 1 member according to edi converter required values

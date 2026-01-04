@@ -19,7 +19,7 @@ import pkg.models.core.facility_pb2 as Facility
 from google.protobuf.json_format import MessageToDict
 from abc import ABC
 from collections import OrderedDict
-from mimesis import Person, Business, Address, Internet
+from mimesis import Person, Finance, Address, Internet
 from generator_helpers import string_generator
 
 
@@ -127,7 +127,7 @@ class ContactGenerator(Generator):
     def generate(self, count):
         person_fake = Person("en")
         internet_fake = Internet()
-        businees_fake = Business("en")
+        businees_fake = Finance("en")
 
         contact_types = {
             "UNKNOWN_CONTACT_TYPE": 0,
@@ -199,7 +199,7 @@ class PlanGenerator(Generator):
         """
         plans_list = []
         for _ in range(count):
-            businees_fake = Business("en")
+            businees_fake = Finance("en")
             self.lifecycle_states_map = {
                 "PLAN_CREATED": 0,
                 "PLAN_ONBOARDED": 1,
@@ -419,7 +419,7 @@ class PartyGenerator(Generator):
         else:
             for _ in range(count):
                 party = Party.Party()
-                bussiness_fake = Business("en")
+                bussiness_fake = Finance("en")
                 party.party_type = 2
                 party.organization.entity_name = bussiness_fake.company()
 
@@ -443,7 +443,7 @@ class FacilityGenerator(Generator):
 
     def generate(self, count):
         address_fake = Address("en")
-        business_fake = Business("en")
+        business_fake = Finance("en")
         facilities_list = []
         for _ in range(count):
             facility = Facility.Facility()

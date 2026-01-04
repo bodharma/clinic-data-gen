@@ -1,0 +1,3 @@
+# stub
+class Plan:
+    pass
