@@ -11,7 +11,7 @@ yo, this doc tracks how we're leveling up this codebase. each section shows what
 │                     MODERNIZATION PHASES                     │
 ├─────────────────────────────────────────────────────────────┤
 │ ✅ Phase 0: Foundation                                       │
-│ ⏳ Phase 1: Core Architecture                                │
+│ 🚧 Phase 1: Core Architecture                                │
 │ ⏳ Phase 2: Testing & Quality                                │
 │ ⏳ Phase 3: Features & UX                                    │
 │ ⏳ Phase 4: Production Ready                                 │
@@ -30,15 +30,15 @@ yo, this doc tracks how we're leveling up this codebase. each section shows what
 ## Phase 0: Foundation 🔥
 **Goal:** make it run cleanly, fix the annoying stuff
 
-### Status: 🚧 In Progress
+### Status: ✅ Complete
 
 | Task | Status | Practices Used |
 |------|--------|----------------|
 | Fix broken tests | ✅ | debugging, import resolution |
-| Handle missing protobuf | 🚧 | graceful degradation, mocking |
+| Handle missing protobuf | ✅ | graceful degradation, mocking |
 | Update dependencies | ⏳ | security patching, version management |
-| Create .env.example | ⏳ | 12-factor app, secure config |
-| Basic package structure | ⏳ | python packaging, modular design |
+| Create .env.example | ✅ | 12-factor app, secure config |
+| Basic package structure | ✅ | python packaging, modular design |
 | Health check endpoint | ⏳ | monitoring, REST API design |
 
 #### What We Fixed ✅
@@ -64,24 +64,43 @@ yo, this doc tracks how we're leveling up this codebase. each section shows what
 
 ---
 
-## Phase 1: Core Architecture
+## Phase 1: Core Architecture 💎
 **Goal:** clean up the structure, make it maintainable
 
-### Status: ⏳ Not Started
+### Status: 🚧 In Progress
 
 | Component | Status | Practices Used |
 |-----------|--------|----------------|
+| Config management | ✅ | pydantic settings, validation, type safety |
+| Error handling | ✅ | custom exceptions, middleware, pythonic patterns |
+| Logging setup | ⏳ | structured logging, observability |
 | Service layer pattern | ⏳ | separation of concerns, SOLID |
 | Dependency injection | ⏳ | testability, loose coupling |
-| Error handling | ⏳ | custom exceptions, middleware |
-| Config management | ⏳ | pydantic settings, validation |
-| Logging setup | ⏳ | structured logging, observability |
 
-#### What We'll Build
-- Proper service layer (not everything in routes)
-- DI container (make testing easier)
-- Consistent error handling (no more random exceptions)
-- Type-safe config (pydantic ftw)
+#### What We're Building
+- ✅ Type-safe config (Pydantic Settings v2, .env support)
+- ✅ Consistent error handling (domain exceptions + middleware)
+- ⏳ Structured logging (JSON output, request tracking)
+- ⏳ Proper service layer (not everything in routes)
+- ⏳ DI container (make testing easier)
+
+#### What We Built ✅
+- **config management**: full Pydantic Settings v2 implementation
+  - `core/config.py` - type-safe settings (StorageConfig, AWSConfig, APIConfig)
+  - `.env.example` - documented config template
+  - `core/constants.py` - app-wide constants
+  - 15/15 tests passing
+  - supports nested env vars with `__` delimiter
+  - defaults work for local dev, overridable for prod
+
+- **error handling**: pythonic exception hierarchy + FastAPI middleware
+  - `core/exceptions.py` - clean exception hierarchy (AppException → domain exceptions)
+  - `core/middleware/error_handler.py` - FastAPI exception handlers
+  - 44/44 tests passing (25 exception + 19 handler tests)
+  - 99% code coverage
+  - consistent JSON error responses with request context
+  - proper HTTP status code mapping (400, 422, 500)
+  - ready to replace HTTPException usage in routes
 
 ---
 
@@ -162,13 +181,16 @@ This section highlights the professional practices demonstrated in this codebase
 - Healthcare domain expertise (EDI X12, FHIR)
 - Modern async Python (FastAPI)
 - Real-world business logic
+- Type-safe configuration (Pydantic Settings v2)
+- 12-factor app principles (environment-based config)
+- Comprehensive testing (pytest, 15/15 config tests)
 
 ### 🚧 Being Added
-- Test-driven development
-- Clean architecture patterns
-- Type safety & static analysis
+- Clean architecture patterns (service layer, DI)
+- Structured logging & observability
+- Custom exception handling
 - CI/CD automation
-- Documentation-driven development
+- API documentation & swagger
 
 ---
 
@@ -197,8 +219,8 @@ This section highlights the professional practices demonstrated in this codebase
 
 ---
 
-**Last Updated:** 2026-01-04
-**Next Review:** After each phase completion
+**Last Updated:** 2026-01-04 (Phase 1: Error Handling Complete)
+**Next Review:** After logging implementation
 
 ---
 
