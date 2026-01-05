@@ -10,7 +10,16 @@
       "Bash(python:*)",
       "Bash(pip install:*)",
       "Bash(pip show:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(python3:*)",
+      "Bash(ENVIRONMENT=production STORAGE_DATA_DIR=/custom/path API_PORT=9000 python3:*)",
+      "Bash(STORAGE__S3_BUCKET=my-test-bucket STORAGE__S3_REGION=eu-west-1 python3:*)",
+      "Bash(chmod:*)",
+      "Bash(ENVIRONMENT=production DEBUG=true STORAGE__S3_BUCKET=prod-bucket API_PORT=9000 python3:*)",
+      "Bash(tree:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)"
     ]
   }
 }

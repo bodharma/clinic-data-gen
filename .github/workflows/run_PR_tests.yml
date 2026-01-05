@@ -1,0 +1,90 @@
+name: Run tests on PR
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  run_tests_on_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install python deps
+        run: pip3 install -r requirements.txt
+
+      - name: Verify protobuf data generator changed
+        uses: tj-actions/changed-files@v8.4
+        id: verify-changed-protobufs
+        with:
+          files: |
+            pkg
+            generator_helpers
+            generate_protobuf_data.py
+      - name: Run converted protobufs tests
+        if: steps.verify-changed-protobufs.outputs.any_changed == 'true'
+        run: |
+          python3 -m pytest tests/test_protobuf_data_generator.py -n 10
+
+
+      - name: Verify edi data generator changed
+        uses: tj-actions/changed-files@v8.4
+        id: verify-changed-edi-files
+        with:
+          files: |
+            templates/edi
+            csv
+            edi
+            generate_edi.py
+      - name: Run edi test data generation tests
+        if: steps.verify-changed-edi-files.outputs.any_changed == 'true'
+        run: |
+          python3 -m pytest tests/test_app.py -k "test_create_member"
+
+
+      - name: Verify onsite data generator changed
+        uses: tj-actions/changed-files@v8.4
+        id: verify-changed-onsite-files
+        with:
+          files: |
+            generator_helpers
+            templates/onsite
+            generate_onsite_data.py
+      - name: Run edi test data generation tests
+        if: steps.verify-changed-onsite-files.any_changed == 'true'
+        run: |
+          python3 -m pytest tests/test_app.py -k test_create_onsite
+
+
+      - name: Verify raw data generator changed
+        uses: tj-actions/changed-files@v8.4
+        id: verify-changed-raw-files
+        with:
+          files: |
+            generator_helpers
+            generate_raw_data.py
+      - name: Run edi test data generation tests
+        if: steps.verify-changed-raw-files.any_changed == 'true'
+        run: |
+          python3 -m pytest tests/test_app.py -k "test_create_csv or test_create_vaccine_patient_data or test_create_edi"
+
+      - name: Verify databus data generator changed
+        uses: tj-actions/changed-files@v8.4
+        id: verify-changed-databus-files
+        with:
+          files: |
+            generator_helpers
+            generate_vaccine_data.py
+      - name: Run edi test data generation tests
+        if: steps.verify-changed-databus-files.any_changed == 'true'
+        run: |
+          python3 -m pytest tests/test_app.py -k "test_create_databus_data"

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-generator
+  namespace: data-generator
+spec:
+  template:
+    metadata:
+      name: data-generator-container
+      labels:
+        app: data-generator
+    spec:
+      containers:
+        - name: data-generator
+          image: '922449831315.dkr.ecr.us-east-1.amazonaws.com/apps-data-generator:latest'
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            failureThreshold: 6
+  replicas: 1
+  selector:
+    matchLabels:
+      app: data-generator

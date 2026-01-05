@@ -1,0 +1,40 @@
+name: Update NSL repo
+
+on: workflow_dispatch
+
+jobs:
+  update_nsl_repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install python deps
+        run: pip3 install -r requirements.txt
+
+      - name: Update NSL repo
+        env:
+          GHA_AUTOMATION_PAT: ${{ secrets.GHA_AUTOMATION_PAT }}
+        run: python update_proto.py
+
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(TZ=":Europe/Kiev" date +'%Y-%m-%d %H:%M:%S')"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GHA_AUTOMATION_PAT }}
+          commit-message: converted protos recursively
+          branch: proto_update
+          delete-branch: true
+          reviewers: bohdan-lesiv
+          title: 'proto_update/${{ steps.date.outputs.date }}'
+          body: converted protos recursively
